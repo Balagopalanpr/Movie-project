@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Add movies
+{% endblock %}
+{% block content %}
+<h1>Add Movies</h1>
+<h4> This page is used to add Movies </h4>
+<form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="mb-3">
+    <label class="form-label">Name</label>
+    <input type="text" class="form-control"  name="n" placeholder="Enter Movie Name">
+  </div>
+      <div class="mb-3">
+    <label class="form-label">Year</label>
+    <input type="number" class="form-control"  name="y" placeholder="Enter Movie Year">
+  </div>
+      <div class="mb-3">
+    <label class="form-label">Description</label>
+    <input type="text" class="form-control"  name="d" placeholder="Enter Movie Description">
+  </div>
+      <div class="mb-3">
+    <label class="form-label">Image</label>
+    <input type="file" class="form-control"  name="i" placeholder="Add Movie Image">
+  </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Add movies
+{% endblock %}
+{% block content %}
+<div class="row">
+
+        <div class="col-md-6">
+          <img src="{{m.image.url}}" height="300px; width=300px;">
+        </div>
+
+    <div class="col-md-6">
+        <h2>{{m.name}}</h2>
+        <p>{{m.desc}}</p>
+        <p>{{m.year}}</p>
+        <a class="btn btn-danger" href="{% url 'Movies:update' m.id %}">update</a>
+         <a class="btn btn-danger" href="{% url 'Movies:delete' m.id%}">delete</a>
+    </div>
+
+</div>
+
+{% endblock %}
